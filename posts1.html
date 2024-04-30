@@ -5,42 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posts Page</title>
+  
   <style>
-    /* body {
-            font-family: Arial, sans-serif;
-            background-image:url(https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg);
-            -webkit-filter: blur(100%); /* Safari 6.0 - 9.0 */
-    /* filter: grayscale(100%);
-        }
-
-        .posts-container {
-            background-color: #23242a;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 5px;
-            color: white;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f9f9ff;
-            cursor: pointer;
-          color: black;
-        }
-
-        li:hover {
-            background-color: #f0f0f0;
-        } */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
     html {
@@ -57,7 +23,6 @@
     }
 
     .posts-container {
-      /* background-color: #23242a; */
       max-width: 600px;
       margin: 50px auto;
       padding: 20px;
@@ -76,7 +41,6 @@
       max-width: 300px;
     }
 
-    /* List element */
     li {
       counter-increment: index;
       display: flex;
@@ -90,7 +54,6 @@
       background-color: #e3e3e314;
     }
 
-    /* Element counter */
     li::before {
       content: counters(index, ".", decimal-leading-zero);
       font-size: 1.5rem;
@@ -106,19 +69,10 @@
       -webkit-text-fill-color: transparent;
     }
 
-
-    /* Element separation */
     li+li {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* @use postcss-preset-env {
-        stage: 0;
-        autoprefixer: {
-          grid: true;
-        }
-        browsers: last 2 versions
-      } */
   </style>
 </head>
 
@@ -128,8 +82,9 @@
     <ul id="postLists"></ul>
   </div>
 </body>
+  
 <script>
-  // Posts Page
+  // Posts Page //
   document.addEventListener("DOMContentLoaded", function () {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
@@ -143,7 +98,6 @@
           li.setAttribute("data-id", post.id);
           li.addEventListener("click", function () {
             const id = this.getAttribute("data-id");
-            // window.location.href = "post.html?id=" + id;
             window.location.href = `post1.html?id=${id}`;
           });
           postLists.appendChild(li);
